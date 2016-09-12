@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("HMS")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("医院管理系统(HMS)是使用C#语言开发的C/S架构系统,主要功能有:医生信息的管理,病人信息的管理、收费信息的管理。联系电话:18600806360")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("IT360")]
 [assembly: AssemblyProduct("HMS")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("HMS")]
 [assembly: AssemblyCulture("")]
 
 //将 ComVisible 设置为 false 将使此程序集中的类型

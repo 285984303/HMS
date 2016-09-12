@@ -152,6 +152,7 @@
             this.picInfo.TabIndex = 2;
             this.picInfo.TabStop = false;
             this.toolTip1.SetToolTip(this.picInfo, "系统信息");
+            this.picInfo.Click += new System.EventHandler(this.picInfo_Click);
             // 
             // label1
             // 

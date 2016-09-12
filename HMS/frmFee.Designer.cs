@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFee));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtKey = new System.Windows.Forms.TextBox();
+            this.btnFind = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -46,7 +47,8 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,23 +77,25 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "收费管理信息";
             // 
-            // textBox1
+            // txtKey
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(60, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(557, 30);
-            this.textBox1.TabIndex = 31;
+            this.txtKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKey.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtKey.Location = new System.Drawing.Point(60, 55);
+            this.txtKey.Name = "txtKey";
+            this.txtKey.Size = new System.Drawing.Size(557, 30);
+            this.txtKey.TabIndex = 31;
+            this.toolTip1.SetToolTip(this.txtKey, "请输入病历号");
             // 
-            // button1
+            // btnFind
             // 
-            this.button1.Location = new System.Drawing.Point(624, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 29);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "查询";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFind.Location = new System.Drawing.Point(624, 55);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(95, 29);
+            this.btnFind.TabIndex = 32;
+            this.btnFind.Text = "查询";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // listBox1
             // 
@@ -124,13 +128,13 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(130, 404);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 34;
-            this.label3.Text = "病例号";
+            this.label3.Text = "药费";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(172, 400);
+            this.textBox3.Location = new System.Drawing.Point(161, 400);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(63, 21);
             this.textBox3.TabIndex = 35;
@@ -138,15 +142,15 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(242, 405);
+            this.label4.Location = new System.Drawing.Point(237, 405);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 12);
             this.label4.TabIndex = 34;
-            this.label4.Text = "病例号";
+            this.label4.Text = "挂号费";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(283, 401);
+            this.textBox4.Location = new System.Drawing.Point(278, 401);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(63, 21);
             this.textBox4.TabIndex = 35;
@@ -158,7 +162,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 12);
             this.label5.TabIndex = 34;
-            this.label5.Text = "病例号";
+            this.label5.Text = "处置费";
             // 
             // textBox5
             // 
@@ -174,7 +178,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 12);
             this.label6.TabIndex = 34;
-            this.label6.Text = "病例号";
+            this.label6.Text = "化验费";
             // 
             // textBox6
             // 
@@ -201,21 +205,22 @@
             this.button3.Text = "删除";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnExit
             // 
-            this.button4.Location = new System.Drawing.Point(699, 404);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(51, 23);
-            this.button4.TabIndex = 36;
-            this.button4.Text = "退出";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnExit.Location = new System.Drawing.Point(699, 404);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(51, 23);
+            this.btnExit.TabIndex = 36;
+            this.btnExit.Text = "退出";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmFee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 439);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox6);
@@ -229,8 +234,8 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnFind);
+            this.Controls.Add(this.txtKey);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -251,8 +256,8 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtKey;
+        private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
@@ -266,6 +271,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

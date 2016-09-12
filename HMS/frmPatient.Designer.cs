@@ -287,12 +287,13 @@
             // btnBack
             // 
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnBack.Location = new System.Drawing.Point(709, 6);
+            this.btnBack.Location = new System.Drawing.Point(744, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 20;
             this.btnBack.Text = "返回";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label3
             // 
@@ -366,6 +367,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmPatient";
+            this.Load += new System.EventHandler(this.frmPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -13,5 +13,11 @@ namespace HMS
         {
 
         }
+
+        private void btnBack_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
+        }
     }
 }

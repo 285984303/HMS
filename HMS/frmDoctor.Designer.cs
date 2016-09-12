@@ -75,7 +75,7 @@
             // btnBack
             // 
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnBack.Location = new System.Drawing.Point(716, 12);
+            this.btnBack.Location = new System.Drawing.Point(748, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 1;

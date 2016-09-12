@@ -63,5 +63,11 @@ namespace HMS
         {
 
         }
+
+        private void picInfo_Click(object sender, EventArgs e)
+        {
+            AboutBox1 frm = new AboutBox1();
+            frm.ShowDialog();
+        }
     }
 }

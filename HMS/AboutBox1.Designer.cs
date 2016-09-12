@@ -137,7 +137,7 @@
             this.textBoxDescription.Size = new System.Drawing.Size(271, 116);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "说明";
+            this.textBoxDescription.Text = "医院管理系统(HMS)是使用C#语言开发的C/S架构系统,主要功能有:医生信息的管理,病人信息的管理、收费信息的管理。";
             // 
             // okButton
             // 

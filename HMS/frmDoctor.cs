@@ -56,10 +56,18 @@ namespace HMS
             //dataGridView2.Rows.Insert(0, dr);     //插入的数据作为第一行显示
             string d_Name = "";
             string d_Profession = "";
+            string d_Time = "";
+            string d_Major = "";
+            string d_Department = "";
+            string p_Expert = "";
             if (dataGridView2.CurrentRow.Index > -1)
             {
                 d_Name = dataGridView2.Rows[0].Cells["d_Name"].Value.ToString();
                 d_Profession = dataGridView2.Rows[0].Cells["d_Profession"].Value.ToString();
+                d_Time = dataGridView2.Rows[0].Cells["d_Time"].Value.ToString();
+                d_Major = dataGridView2.Rows[0].Cells["d_Major"].Value.ToString();
+                d_Department = dataGridView2.Rows[0].Cells["d_Department"].Value.ToString();
+                p_Expert = dataGridView2.Rows[0].Cells["p_Expert"].Value.ToString();
                 dataGridView2.EndEdit();
                 //string[] strArray = {"1", "医生", "外科" };
                 //DataRow dr = new DataRow();
@@ -73,6 +81,10 @@ namespace HMS
                 DataRow dr = dt.NewRow();
                 dr["d_Name"] = d_Name;
                 dr["d_Profession"] = d_Profession;
+                dr["d_Time"] = d_Time;
+                dr["d_Major"] = d_Major;
+                dr["d_Department"] = d_Department;
+                dr["p_Expert"] = p_Expert;
                 //dt.Rows.Add(dr);
 
                 //dt.AcceptChanges();

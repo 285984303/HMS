@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Data;
+using System.Windows.Forms;
 
 namespace HMS
 {
@@ -7,6 +8,20 @@ namespace HMS
         public frmPatient()
         {
             InitializeComponent();
+        }
+
+        private void frmPatient_Load(object sender, System.EventArgs e)
+        {
+            string sql = "select * from `hm_patient`";
+            DbHelper db = new DbHelper();
+            DataTable data = db.ExecuteDataTable(sql, null);
+            this.dataGridView1.DataSource = data;
+        }
+
+        private void btnBack_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
         }
     }
 }
