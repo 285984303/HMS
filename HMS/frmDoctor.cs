@@ -126,27 +126,30 @@ namespace HMS
 
         private void btnDelete_Click(object sender, System.EventArgs e)
         {
-            string mDeleteStr = "(";
+            string mDeleteStr = "";
             //删除数据条数计数
             int count = 0;
-
+            //string d_id = "";
+            count = dataGridView1.SelectedRows.Count;
             //遍历数据获取checkbox为ture的行的ListCd值
-            for (int i = 0; i < Convert.ToInt32(dataGridView1.RowCount); i++)
+            for (int i = 0; i < count; i++)
             {
-
-                if (Convert.ToBoolean(dataGridView1[0, i].Value))
-                {
-                    mDeleteStr += dataGridView1[1, i].Value.ToString().Trim() + ",";
-                    count++;
-                }
-
+                //d_id = dataGridView2.Rows[0].Cells["I_Id"].Value.ToString();
+                //if (Convert.ToBoolean(dataGridView1[0, i].Value))
+                //{
+                //    mDeleteStr += dataGridView1[1, i].Value.ToString().Trim() + ",";
+                //    count++;
+                //}
+                mDeleteStr += dataGridView1.SelectedRows[i].Cells[0].EditedFormattedValue.ToString().Trim() + ",";
 
             }
+            
 
             if (count > 0)
             {
-                mDeleteStr = mDeleteStr.Substring(0, mDeleteStr.Length - 1) + ")";
-                mDeleteStr = "delete from hm_doctor where I_Id  in " + mDeleteStr;
+                
+                mDeleteStr = mDeleteStr.Substring(0, mDeleteStr.Length - 1);
+                mDeleteStr = "delete from hm_doctor where I_Id  in (" + mDeleteStr + ")";
                 DbHelper db = new DbHelper();
                 //ExuSQL(mDeleteStr);
                 db.ExecuteNonQuery(mDeleteStr, null);
@@ -171,6 +174,11 @@ namespace HMS
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.dataGridView2.EndEdit();
         }
     }
 }
