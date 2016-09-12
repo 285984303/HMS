@@ -79,8 +79,9 @@
             this.btnFlush.Name = "btnFlush";
             this.btnFlush.Size = new System.Drawing.Size(150, 37);
             this.btnFlush.TabIndex = 17;
-            this.btnFlush.Text = "刷新";
+            this.btnFlush.Text = "查询";
             this.btnFlush.UseVisualStyleBackColor = true;
+            this.btnFlush.Click += new System.EventHandler(this.btnFlush_Click);
             // 
             // btnBack
             // 

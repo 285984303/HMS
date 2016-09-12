@@ -8,5 +8,10 @@ namespace HMS
         {
             InitializeComponent();
         }
+
+        private void btnFlush_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
