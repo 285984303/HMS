@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2016-09-09 14:21:44
+Date: 2016-09-12 17:17:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,7 +28,7 @@ CREATE TABLE `hm_doctor` (
   `d_Department` varchar(25) DEFAULT NULL,
   `p_Expert` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`I_Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hm_doctor
@@ -38,6 +38,7 @@ INSERT INTO `hm_doctor` VALUES ('2', 'wang5', '副院长', '8:00~18:00', '医学
 INSERT INTO `hm_doctor` VALUES ('3', 'uu8', '护士长', '8:00~18:00', '医学', '内科', '是');
 INSERT INTO `hm_doctor` VALUES ('4', 'uu1', '护士', '8:00~18:00', '护士', '内科', '否');
 INSERT INTO `hm_doctor` VALUES ('5', 'wwww', '护士', '8:00~18:00', '护士', '内科', '否');
+INSERT INTO `hm_doctor` VALUES ('6', '李菩萨', '主治医师', '8:00~18:00', '神经学', '内科', '是');
 
 -- ----------------------------
 -- Table structure for hm_fee
@@ -45,17 +46,20 @@ INSERT INTO `hm_doctor` VALUES ('5', 'wwww', '护士', '8:00~18:00', '护士', '
 DROP TABLE IF EXISTS `hm_fee`;
 CREATE TABLE `hm_fee` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `A` int(11) DEFAULT NULL,
+  `p_Id` int(11) DEFAULT NULL COMMENT '病例号',
+  `P_Name` varchar(10) DEFAULT NULL COMMENT '姓名',
   `B` int(11) DEFAULT NULL,
   `C` int(11) DEFAULT NULL,
   `D` int(11) DEFAULT NULL,
   `E` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hm_fee
 -- ----------------------------
+INSERT INTO `hm_fee` VALUES ('1', '1', '张三', '120', '58', '60', '300');
+INSERT INTO `hm_fee` VALUES ('2', '2', '李四', '120', '58', '60', '300');
 
 -- ----------------------------
 -- Table structure for hm_patient
@@ -64,15 +68,17 @@ DROP TABLE IF EXISTS `hm_patient`;
 CREATE TABLE `hm_patient` (
   `p_Id` int(11) NOT NULL AUTO_INCREMENT,
   `P_Name` varchar(25) DEFAULT NULL,
-  `p_Time` varchar(25) DEFAULT NULL,
+  `p_Time` datetime DEFAULT NULL COMMENT '初诊时间',
   `p_Phone` varchar(25) DEFAULT NULL,
   `p_Note` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`p_Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hm_patient
 -- ----------------------------
+INSERT INTO `hm_patient` VALUES ('1', '张三', '2016-09-12 16:31:30', '18600806360', null);
+INSERT INTO `hm_patient` VALUES ('2', '李四', '2016-09-12 16:31:30', '18600806360', null);
 
 -- ----------------------------
 -- Table structure for hm_recipe

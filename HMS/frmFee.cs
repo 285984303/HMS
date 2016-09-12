@@ -13,6 +13,7 @@ namespace HMS
 
         private void frmFee_Load(object sender, System.EventArgs e)
         {
+            dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.ColumnHeader);
             string sql = "select * from `hm_fee`";
             DbHelper db = new DbHelper();
             DataTable data = db.ExecuteDataTable(sql, null);
