@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@
             this.d_Major = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.d_Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p_Expert = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +88,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 82);
+            this.label2.Location = new System.Drawing.Point(24, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 12);
             this.label2.TabIndex = 0;
@@ -95,7 +97,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(71, 83);
+            this.label3.Location = new System.Drawing.Point(64, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 0;
@@ -103,7 +105,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(104, 80);
+            this.txtId.Location = new System.Drawing.Point(94, 79);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(55, 21);
             this.txtId.TabIndex = 2;
@@ -111,7 +113,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(167, 82);
+            this.label4.Location = new System.Drawing.Point(156, 82);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 0;
@@ -119,7 +121,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(200, 79);
+            this.txtName.Location = new System.Drawing.Point(187, 79);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(75, 21);
             this.txtName.TabIndex = 2;
@@ -127,15 +129,15 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(283, 82);
+            this.label5.Location = new System.Drawing.Point(268, 82);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 0;
-            this.label5.Text = "编号";
+            this.label5.Text = "职称";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(316, 79);
+            this.textBox3.Location = new System.Drawing.Point(298, 79);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(80, 21);
             this.textBox3.TabIndex = 2;
@@ -143,11 +145,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(404, 82);
+            this.label6.Location = new System.Drawing.Point(384, 82);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 12);
+            this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 0;
-            this.label6.Text = "编号";
+            this.label6.Text = "出诊时间";
             // 
             // textBox4
             // 
@@ -159,15 +161,15 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(525, 83);
+            this.label7.Location = new System.Drawing.Point(522, 83);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 0;
-            this.label7.Text = "编号";
+            this.label7.Text = "专业";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(558, 80);
+            this.textBox5.Location = new System.Drawing.Point(553, 79);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(80, 21);
             this.textBox5.TabIndex = 2;
@@ -175,15 +177,15 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(646, 84);
+            this.label8.Location = new System.Drawing.Point(640, 84);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 0;
-            this.label8.Text = "编号";
+            this.label8.Text = "科室";
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(679, 81);
+            this.textBox6.Location = new System.Drawing.Point(670, 79);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(80, 21);
             this.textBox6.TabIndex = 2;
@@ -192,13 +194,14 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "是否专家",
             "是专家",
             "不是专家"});
-            this.comboBox1.Location = new System.Drawing.Point(765, 82);
+            this.comboBox1.Location = new System.Drawing.Point(760, 79);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(58, 20);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.Text = "是否专家";
+            this.toolTip1.SetToolTip(this.comboBox1, "是否专家");
             // 
             // dataGridView1
             // 
@@ -275,7 +278,7 @@
             this.btnFlush.Name = "btnFlush";
             this.btnFlush.Size = new System.Drawing.Size(75, 23);
             this.btnFlush.TabIndex = 1;
-            this.btnFlush.Text = "刷新";
+            this.btnFlush.Text = "查询";
             this.btnFlush.UseVisualStyleBackColor = true;
             this.btnFlush.Click += new System.EventHandler(this.btnFlush_Click);
             // 
@@ -424,5 +427,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn d_Major;
         private System.Windows.Forms.DataGridViewTextBoxColumn d_Department;
         private System.Windows.Forms.DataGridViewComboBoxColumn p_Expert;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

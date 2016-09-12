@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2016-09-12 17:17:26
+Date: 2016-09-12 17:35:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,7 +28,7 @@ CREATE TABLE `hm_doctor` (
   `d_Department` varchar(25) DEFAULT NULL,
   `p_Expert` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`I_Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hm_doctor
@@ -38,7 +38,8 @@ INSERT INTO `hm_doctor` VALUES ('2', 'wang5', '副院长', '8:00~18:00', '医学
 INSERT INTO `hm_doctor` VALUES ('3', 'uu8', '护士长', '8:00~18:00', '医学', '内科', '是');
 INSERT INTO `hm_doctor` VALUES ('4', 'uu1', '护士', '8:00~18:00', '护士', '内科', '否');
 INSERT INTO `hm_doctor` VALUES ('5', 'wwww', '护士', '8:00~18:00', '护士', '内科', '否');
-INSERT INTO `hm_doctor` VALUES ('6', '李菩萨', '主治医师', '8:00~18:00', '神经学', '内科', '是');
+INSERT INTO `hm_doctor` VALUES ('6', '李菩萨', '主治医师', '8:00~18:00', '神经学', '神经内科', '是');
+INSERT INTO `hm_doctor` VALUES ('7', '刘小民', '主治医师', '8:00~18:00', '消化内科', '消化内科', '是');
 
 -- ----------------------------
 -- Table structure for hm_fee
