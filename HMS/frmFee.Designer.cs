@@ -36,19 +36,20 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtp_Id = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtFee = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtB = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtC = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtD = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(688, 248);
+            this.dataGridView1.Size = new System.Drawing.Size(750, 248);
             this.dataGridView1.TabIndex = 29;
             // 
             // label1
@@ -79,7 +80,6 @@
             // 
             // txtKey
             // 
-            this.txtKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKey.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtKey.Location = new System.Drawing.Point(60, 55);
             this.txtKey.Name = "txtKey";
@@ -89,6 +89,7 @@
             // 
             // btnFind
             // 
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFind.Location = new System.Drawing.Point(624, 55);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(95, 29);
@@ -104,7 +105,7 @@
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(18, 349);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(688, 40);
+            this.listBox1.Size = new System.Drawing.Size(750, 40);
             this.listBox1.TabIndex = 33;
             // 
             // label2
@@ -116,12 +117,12 @@
             this.label2.TabIndex = 34;
             this.label2.Text = "病例号";
             // 
-            // textBox2
+            // txtp_Id
             // 
-            this.textBox2.Location = new System.Drawing.Point(61, 400);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(63, 21);
-            this.textBox2.TabIndex = 35;
+            this.txtp_Id.Location = new System.Drawing.Point(61, 400);
+            this.txtp_Id.Name = "txtp_Id";
+            this.txtp_Id.Size = new System.Drawing.Size(63, 21);
+            this.txtp_Id.TabIndex = 35;
             // 
             // label3
             // 
@@ -132,12 +133,12 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "药费";
             // 
-            // textBox3
+            // txtFee
             // 
-            this.textBox3.Location = new System.Drawing.Point(161, 400);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(63, 21);
-            this.textBox3.TabIndex = 35;
+            this.txtFee.Location = new System.Drawing.Point(161, 400);
+            this.txtFee.Name = "txtFee";
+            this.txtFee.Size = new System.Drawing.Size(63, 21);
+            this.txtFee.TabIndex = 35;
             // 
             // label4
             // 
@@ -148,12 +149,12 @@
             this.label4.TabIndex = 34;
             this.label4.Text = "挂号费";
             // 
-            // textBox4
+            // txtB
             // 
-            this.textBox4.Location = new System.Drawing.Point(278, 401);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(63, 21);
-            this.textBox4.TabIndex = 35;
+            this.txtB.Location = new System.Drawing.Point(278, 401);
+            this.txtB.Name = "txtB";
+            this.txtB.Size = new System.Drawing.Size(63, 21);
+            this.txtB.TabIndex = 35;
             // 
             // label5
             // 
@@ -164,12 +165,12 @@
             this.label5.TabIndex = 34;
             this.label5.Text = "处置费";
             // 
-            // textBox5
+            // txtC
             // 
-            this.textBox5.Location = new System.Drawing.Point(396, 402);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(63, 21);
-            this.textBox5.TabIndex = 35;
+            this.txtC.Location = new System.Drawing.Point(396, 402);
+            this.txtC.Name = "txtC";
+            this.txtC.Size = new System.Drawing.Size(63, 21);
+            this.txtC.TabIndex = 35;
             // 
             // label6
             // 
@@ -180,58 +181,73 @@
             this.label6.TabIndex = 34;
             this.label6.Text = "化验费";
             // 
-            // textBox6
+            // txtD
             // 
-            this.textBox6.Location = new System.Drawing.Point(510, 404);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(63, 21);
-            this.textBox6.TabIndex = 35;
+            this.txtD.Location = new System.Drawing.Point(510, 404);
+            this.txtD.Name = "txtD";
+            this.txtD.Size = new System.Drawing.Size(63, 21);
+            this.txtD.TabIndex = 35;
             // 
-            // button2
+            // btnAdd
             // 
-            this.button2.Location = new System.Drawing.Point(585, 404);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(51, 23);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "添加";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(644, 404);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 36;
+            this.btnAdd.Text = "添加";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.Location = new System.Drawing.Point(642, 404);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(51, 23);
-            this.button3.TabIndex = 36;
-            this.button3.Text = "删除";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(812, 433);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(51, 23);
+            this.btnDelete.TabIndex = 36;
+            this.btnDelete.Text = "删除";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(699, 404);
+            this.btnExit.Location = new System.Drawing.Point(740, 404);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(51, 23);
+            this.btnExit.Size = new System.Drawing.Size(69, 23);
             this.btnExit.TabIndex = 36;
             this.btnExit.Text = "退出";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnBack.Location = new System.Drawing.Point(788, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 37;
+            this.btnBack.Text = "返回";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // frmFee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 439);
+            this.ClientSize = new System.Drawing.Size(875, 495);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtD);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtC);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtB);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtFee);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtp_Id);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnFind);
@@ -260,18 +276,19 @@
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtp_Id;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtFee;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtB;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtC;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtD;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

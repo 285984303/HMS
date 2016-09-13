@@ -16,12 +16,10 @@ namespace HMS
             string username = this.txtUserName.Text;
             string pass = this.txtPass.Text;
 
-            //string connectionString = @"Server=localhost;Database=hms_db;Uid=root;Pwd=123456;Port=3306;";
+
             string sql = "select * from `hm_user` where `a_User`=@a_User and `a_Password`=@a_Password";
             DbHelper db = new DbHelper();
-            //DataTable data = db.ExecuteDataTable(sql, null);
-            //DbDataReader reader = db.ExecuteReader(sql, null);
-            //reader.Close();
+
 
             MySqlParameter[] parameters = {
 new MySqlParameter("@a_User", username),
@@ -32,16 +30,10 @@ new MySqlParameter("@a_Password", pass),
             int ok = (int)db.ExecuteScalar(sql, parameters);
             if (ok > 0)
             {
-                //MessageBox.Show("注册成功!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 frmMain frm = new frmMain();
                 this.Hide();
                 frm.Show();
-                //this.Close();
-                //this.Dispose();
-
-                //frm.Show();
-                
-                //
                 
             }
             else
@@ -50,7 +42,7 @@ new MySqlParameter("@a_Password", pass),
             }
 
 
-            //frmLogin frm = new frmLogin();
+           
             
             
         }

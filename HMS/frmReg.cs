@@ -19,12 +19,10 @@ namespace HMS
             string name = this.txtName.Text;
             string mail = this.txtMail.Text;
             string phone = this.txtPhone.Text;
-            //string connectionString = @"Server=localhost;Database=hms_db;Uid=root;Pwd=123456;Port=3306;";
+            
             string sql = "INSERT INTO `hms_db`.`hm_user` (`a_User`, `a_Password`, `a_Name`, `a_E_mail`, `a_Phone`) VALUES(@a_User, @a_Password, @a_Name, @a_E_mail,@a_Phone)";
             DbHelper db = new DbHelper();
-            //DataTable data = db.ExecuteDataTable(sql, null);
-            //DbDataReader reader = db.ExecuteReader(sql, null);
-            //reader.Close();
+
 
             MySqlParameter[] parameters = {
 new MySqlParameter("@a_User", username),
@@ -45,11 +43,11 @@ new MySqlParameter("@a_Phone", phone),
             }
 
 
-            //frmLogin frm = new frmLogin();
+            
             this.Close();
             this.Dispose();
 
-            //frm.Show();
+            
         }
 
         private void frmReg_Load(object sender, EventArgs e)
