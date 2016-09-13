@@ -171,7 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::HMS.Properties.Resources.eb32c1fb998feb6576dab0cfac50f32a_big;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(874, 495);
+            this.ClientSize = new System.Drawing.Size(875, 495);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picInfo);
             this.Controls.Add(this.picMini);

@@ -78,7 +78,7 @@
             // btnBack
             // 
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnBack.Location = new System.Drawing.Point(748, 12);
+            this.btnBack.Location = new System.Drawing.Point(788, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 1;
@@ -211,6 +211,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(57, 111);
             this.dataGridView1.Name = "dataGridView1";
@@ -223,7 +224,7 @@
             // btnAdd
             // 
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAdd.Location = new System.Drawing.Point(587, 400);
+            this.btnAdd.Location = new System.Drawing.Point(609, 400);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 1;
@@ -254,7 +255,7 @@
             // btnUpdate
             // 
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnUpdate.Location = new System.Drawing.Point(670, 400);
+            this.btnUpdate.Location = new System.Drawing.Point(692, 400);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 1;
@@ -265,7 +266,7 @@
             // btnCancel
             // 
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCancel.Location = new System.Drawing.Point(751, 400);
+            this.btnCancel.Location = new System.Drawing.Point(773, 400);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
@@ -288,7 +289,8 @@
             // 
             this.dataGridView2.AllowUserToOrderColumns = true;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.I_Id,
             this.d_Name,
@@ -298,9 +300,11 @@
             this.d_Department,
             this.p_Expert});
             this.dataGridView2.Location = new System.Drawing.Point(57, 381);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(524, 60);
+            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridView2.Size = new System.Drawing.Size(524, 47);
             this.dataGridView2.TabIndex = 5;
             // 
             // I_Id
@@ -353,12 +357,13 @@
             // p_Expert
             // 
             this.p_Expert.DataPropertyName = "p_Expert";
+            this.p_Expert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.p_Expert.HeaderText = "是否专家";
             this.p_Expert.Items.AddRange(new object[] {
             "是",
             "否"});
             this.p_Expert.Name = "p_Expert";
-            this.p_Expert.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.p_Expert.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.p_Expert.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.p_Expert.Width = 80;
             // 
@@ -366,7 +371,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 467);
+            this.ClientSize = new System.Drawing.Size(875, 495);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
