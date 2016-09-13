@@ -53,13 +53,14 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnFlush = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.I_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.d_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.d_Profession = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.d_Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.d_Major = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.d_Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p_Expert = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -289,6 +290,7 @@
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.I_Id,
             this.d_Name,
             this.d_Profession,
             this.d_Time,
@@ -300,6 +302,13 @@
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(524, 60);
             this.dataGridView2.TabIndex = 5;
+            // 
+            // I_Id
+            // 
+            this.I_Id.DataPropertyName = "I_Id";
+            this.I_Id.HeaderText = "I_Id";
+            this.I_Id.Name = "I_Id";
+            this.I_Id.Visible = false;
             // 
             // d_Name
             // 
@@ -422,12 +431,13 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnFlush;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn I_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn d_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn d_Profession;
         private System.Windows.Forms.DataGridViewTextBoxColumn d_Time;
         private System.Windows.Forms.DataGridViewTextBoxColumn d_Major;
         private System.Windows.Forms.DataGridViewTextBoxColumn d_Department;
         private System.Windows.Forms.DataGridViewComboBoxColumn p_Expert;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

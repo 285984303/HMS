@@ -24,5 +24,10 @@ namespace HMS
             this.Close();
             this.Dispose();
         }
+
+        private void btnUpdate_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

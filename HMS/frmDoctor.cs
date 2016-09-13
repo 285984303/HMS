@@ -121,7 +121,23 @@ namespace HMS
         {
             if (e.RowIndex < 0) return;
             DataGridView _dgv = (DataGridView)sender;
+            string i_Id = _dgv.Rows[e.RowIndex].Cells["I_Id"].Value.ToString();
             string d_Name = _dgv.Rows[e.RowIndex].Cells["d_Name"].Value.ToString();
+            string d_Profession = _dgv.Rows[e.RowIndex].Cells["d_Profession"].Value.ToString();
+            string d_Time = _dgv.Rows[e.RowIndex].Cells["d_Time"].Value.ToString();
+            string d_Major = _dgv.Rows[e.RowIndex].Cells["d_Major"].Value.ToString();
+            string d_Department = _dgv.Rows[e.RowIndex].Cells["d_Department"].Value.ToString();
+            string p_Expert = _dgv.Rows[e.RowIndex].Cells["p_Expert"].Value.ToString();
+            dataGridView2.Rows[0].Cells["I_Id"].Value = i_Id;
+            dataGridView2.Rows[0].Cells["d_Name"].Value = d_Name;
+            dataGridView2.Rows[0].Cells["d_Profession"].Value = d_Profession;
+            dataGridView2.Rows[0].Cells["d_Time"].Value = d_Time;
+            dataGridView2.Rows[0].Cells["d_Major"].Value = d_Major;
+            dataGridView2.Rows[0].Cells["d_Department"].Value = d_Department;
+            dataGridView2.Rows[0].Cells["p_Expert"].Value = p_Expert;
+
+
+            dataGridView2.EndEdit();
         }
 
         private void btnDelete_Click(object sender, System.EventArgs e)
@@ -173,12 +189,47 @@ namespace HMS
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            string i_Id = dataGridView2.Rows[0].Cells["I_Id"].Value.ToString();
+            string d_Name = dataGridView2.Rows[0].Cells["d_Name"].Value.ToString();
+            string d_Profession = dataGridView2.Rows[0].Cells["d_Profession"].Value.ToString();
+            string d_Time = dataGridView2.Rows[0].Cells["d_Time"].Value.ToString();
+            string d_Major = dataGridView2.Rows[0].Cells["d_Major"].Value.ToString();
+            string d_Department = dataGridView2.Rows[0].Cells["d_Department"].Value.ToString();
+            string p_Expert = dataGridView2.Rows[0].Cells["p_Expert"].Value.ToString();
 
+            string sql = "UPDATE `hms_db`.`hm_doctor` SET  `d_Name`=@d_Name, `d_Profession`=@d_Profession, `d_Time`=@d_Time, `d_Major`=@d_Major, `d_Department`=@d_Department, `p_Expert`=@p_Expert WHERE (`I_Id`=@i_Id);";
+            DbHelper db = new DbHelper();
+
+            MySqlParameter[] parameters = {
+new MySqlParameter("@i_Id", i_Id),
+new MySqlParameter("@d_Name", d_Name),
+new MySqlParameter("@d_Profession", d_Profession),
+new MySqlParameter("@d_Time", d_Time),
+new MySqlParameter("@d_Major", d_Major),
+new MySqlParameter("@d_Department", d_Department),
+new MySqlParameter("@p_Expert", p_Expert),
+};
+
+            int ok = db.ExecuteNonQuery(sql, parameters);
+            if (ok > 0)
+            {
+                MessageBox.Show("修改成功!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("系统忙,请稍候重试!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.dataGridView2.EndEdit();
+            dataGridView2.Rows[0].Cells["d_Name"].Value = "";
+            dataGridView2.Rows[0].Cells["d_Profession"].Value = "";
+            dataGridView2.Rows[0].Cells["d_Time"].Value = "";
+            dataGridView2.Rows[0].Cells["d_Major"].Value = "";
+            dataGridView2.Rows[0].Cells["d_Department"].Value = "";
+            dataGridView2.Rows[0].Cells["p_Expert"].Value = "";
         }
     }
 }

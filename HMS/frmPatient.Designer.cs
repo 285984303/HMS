@@ -29,13 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPatient));
-            this.p_Expert = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.d_Major = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_Profession = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.d_Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -58,53 +52,16 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.I_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_Profession = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_Major = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p_Expert = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // p_Expert
-            // 
-            this.p_Expert.DataPropertyName = "p_Expert";
-            this.p_Expert.HeaderText = "是否专家";
-            this.p_Expert.Items.AddRange(new object[] {
-            "是",
-            "否"});
-            this.p_Expert.Name = "p_Expert";
-            this.p_Expert.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.p_Expert.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.p_Expert.Width = 80;
-            // 
-            // d_Major
-            // 
-            this.d_Major.DataPropertyName = "d_Major";
-            this.d_Major.HeaderText = "所学专业";
-            this.d_Major.MaxInputLength = 10;
-            this.d_Major.Name = "d_Major";
-            this.d_Major.Width = 80;
-            // 
-            // d_Time
-            // 
-            this.d_Time.DataPropertyName = "d_Time";
-            this.d_Time.HeaderText = "出诊时间";
-            this.d_Time.MaxInputLength = 22;
-            this.d_Time.Name = "d_Time";
-            this.d_Time.Width = 80;
-            // 
-            // d_Profession
-            // 
-            this.d_Profession.DataPropertyName = "d_Profession";
-            this.d_Profession.HeaderText = "职称";
-            this.d_Profession.MaxInputLength = 10;
-            this.d_Profession.Name = "d_Profession";
-            this.d_Profession.Width = 80;
-            // 
-            // d_Name
-            // 
-            this.d_Name.DataPropertyName = "d_Name";
-            this.d_Name.HeaderText = "姓名";
-            this.d_Name.MaxInputLength = 10;
-            this.d_Name.Name = "d_Name";
-            this.d_Name.Width = 80;
             // 
             // dataGridView2
             // 
@@ -112,6 +69,7 @@
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.I_Id,
             this.d_Name,
             this.d_Profession,
             this.d_Time,
@@ -123,14 +81,6 @@
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(524, 60);
             this.dataGridView2.TabIndex = 29;
-            // 
-            // d_Department
-            // 
-            this.d_Department.DataPropertyName = "d_Department";
-            this.d_Department.HeaderText = "负责科室";
-            this.d_Department.MaxInputLength = 10;
-            this.d_Department.Name = "d_Department";
-            this.d_Department.Width = 80;
             // 
             // dataGridView1
             // 
@@ -273,6 +223,7 @@
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "修改";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -332,6 +283,65 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "就医信息管理";
             // 
+            // I_Id
+            // 
+            this.I_Id.DataPropertyName = "I_Id";
+            this.I_Id.HeaderText = "I_Id";
+            this.I_Id.Name = "I_Id";
+            this.I_Id.Visible = false;
+            // 
+            // d_Name
+            // 
+            this.d_Name.DataPropertyName = "d_Name";
+            this.d_Name.HeaderText = "姓名";
+            this.d_Name.MaxInputLength = 10;
+            this.d_Name.Name = "d_Name";
+            this.d_Name.Width = 80;
+            // 
+            // d_Profession
+            // 
+            this.d_Profession.DataPropertyName = "d_Profession";
+            this.d_Profession.HeaderText = "职称";
+            this.d_Profession.MaxInputLength = 10;
+            this.d_Profession.Name = "d_Profession";
+            this.d_Profession.Width = 80;
+            // 
+            // d_Time
+            // 
+            this.d_Time.DataPropertyName = "d_Time";
+            this.d_Time.HeaderText = "出诊时间";
+            this.d_Time.MaxInputLength = 22;
+            this.d_Time.Name = "d_Time";
+            this.d_Time.Width = 80;
+            // 
+            // d_Major
+            // 
+            this.d_Major.DataPropertyName = "d_Major";
+            this.d_Major.HeaderText = "所学专业";
+            this.d_Major.MaxInputLength = 10;
+            this.d_Major.Name = "d_Major";
+            this.d_Major.Width = 80;
+            // 
+            // d_Department
+            // 
+            this.d_Department.DataPropertyName = "d_Department";
+            this.d_Department.HeaderText = "负责科室";
+            this.d_Department.MaxInputLength = 10;
+            this.d_Department.Name = "d_Department";
+            this.d_Department.Width = 80;
+            // 
+            // p_Expert
+            // 
+            this.p_Expert.DataPropertyName = "p_Expert";
+            this.p_Expert.HeaderText = "是否专家";
+            this.p_Expert.Items.AddRange(new object[] {
+            "是",
+            "否"});
+            this.p_Expert.Name = "p_Expert";
+            this.p_Expert.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.p_Expert.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.p_Expert.Width = 80;
+            // 
             // frmPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -376,14 +386,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridViewComboBoxColumn p_Expert;
-        private System.Windows.Forms.DataGridViewTextBoxColumn d_Major;
-        private System.Windows.Forms.DataGridViewTextBoxColumn d_Time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn d_Profession;
-        private System.Windows.Forms.DataGridViewTextBoxColumn d_Name;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn d_Department;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
@@ -406,5 +409,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn I_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn d_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn d_Profession;
+        private System.Windows.Forms.DataGridViewTextBoxColumn d_Time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn d_Major;
+        private System.Windows.Forms.DataGridViewTextBoxColumn d_Department;
+        private System.Windows.Forms.DataGridViewComboBoxColumn p_Expert;
     }
 }
