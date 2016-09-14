@@ -159,25 +159,24 @@ namespace HMS
                 mDeleteStr += dataGridView1.SelectedRows[i].Cells[0].EditedFormattedValue.ToString().Trim() + ",";
 
             }
-            
 
-            if (count > 0)
+            
+            if (count > 0 )
             {
+                DialogResult dr = MessageBox.Show("确定要删除这" + count + "条记录吗?", "删除操作", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dr == DialogResult.Yes)
+                {
+                    mDeleteStr = mDeleteStr.Substring(0, mDeleteStr.Length - 1);
+                    mDeleteStr = "delete from hm_doctor where I_Id  in (" + mDeleteStr + ")";
+                    DbHelper db = new DbHelper();
+                    db.ExecuteNonQuery(mDeleteStr, null);
+                    MessageBox.Show("已删除数据：" + count + "条");
+                    string sql = "select * from `hm_doctor`";
+                    DataTable data = db.ExecuteDataTable(sql, null);
+                    this.dataGridView1.DataSource = data;
+                }
                 
-                mDeleteStr = mDeleteStr.Substring(0, mDeleteStr.Length - 1);
-                mDeleteStr = "delete from hm_doctor where I_Id  in (" + mDeleteStr + ")";
-                DbHelper db = new DbHelper();
-                //ExuSQL(mDeleteStr);
-                db.ExecuteNonQuery(mDeleteStr, null);
-                MessageBox.Show("已删除数据：" + count + "条");
-                //ExuSQL(selectStr + curTableStr);
-                string sql = "select * from `hm_doctor`";
-                //DbHelper db = new DbHelper();
-                DataTable data = db.ExecuteDataTable(sql, null);
-                //DbDataReader reader = db.ExecuteReader(sql, null);
-                //reader.Close();
-                //dataGridView1.DataSource = dss.Tables[0].DefaultView;
-                this.dataGridView1.DataSource = data;
             }
             else
             {
